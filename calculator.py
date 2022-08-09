@@ -27,8 +27,14 @@ def Div():
     resultText.set(result)
 
 
+def Clear():
+   result=""
+   resultText.set(result)
+
+
 root =Tk()
 root.title("Calculator")
+root.configure(bg="orange")
 root.geometry("300x200")
 
 resultText = StringVar()
@@ -41,12 +47,13 @@ e1.place(x=100,y=10)
 e2 =Entry(root)
 e2.place(x=100,y=40)
 
-result = Label(root, text="", textvariable=resultText).place(x=100,y=80)
+result = Label(root, text="", textvariable=resultText).place(x=100,y=60)
 
 Button(root, text="+",command =Add, height=1,width=2).place(x=10,y=100)
 Button(root, text="-",command =Minus, height=1,width=2).place(x=40,y=100)
 Button(root, text="*",command =Multiplication, height=1,width=2).place(x=80,y=100)
 Button(root, text="/",command =Div, height=1,width=2).place(x=120,y=100)
+Button(root, text="C",command =Clear, height=1,width=2).place(x=160,y=100)
 
 Number1 =Entry(root)
 Number2 =Entry(root)
